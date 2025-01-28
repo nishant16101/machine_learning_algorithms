@@ -22,3 +22,13 @@ class LinearRegression:
         
     def predict(self,X):
         return np.dot(X,self.weights) + self.bias
+    
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([2, 4, 5, 4, 5])
+
+model = LinearRegression(learning_rate=0.01,epochs=1000)
+model.fit(X,y)
+
+X_new = np.array([[6],[7]])
+predictions = model.predict(X_new)
+print(predictions)
